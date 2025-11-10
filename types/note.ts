@@ -17,3 +17,9 @@ export interface Category {
   id: string;
   name: string;
 }
+
+export interface User{
+  username: string;
+  email: string;
+  avatar: string;
+}

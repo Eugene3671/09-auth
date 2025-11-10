@@ -3,9 +3,9 @@ import {
   HydrationBoundary,
   dehydrate,
 } from "@tanstack/react-query";
-import { fetchNotes } from "@/lib/api";
-import NotesClient from "@/app/notes/filter/[...slug]/Notes.client";
 import { Metadata } from "next";
+import Notes from "./Notes.client";
+import { fetchServerNotes } from "@/lib/serverApi";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -46,15 +46,12 @@ export default async function NotesByCategory({ params }: Props) {
 
   await queryClient.prefetchQuery({
     queryKey: ["notes", "", 1, isAll ? undefined : categoryId],
-    queryFn: () => fetchNotes("", 1, isAll ? undefined : categoryId),
+    queryFn: () => fetchServerNotes("", 1, isAll ? undefined : categoryId),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NotesClient
-        key={categoryId || "all"}
-        tag={isAll ? undefined : categoryId}
-      />
+      <Notes key={categoryId || "all"} tag={isAll ? undefined : categoryId} />
     </HydrationBoundary>
   );
 }
