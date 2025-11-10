@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
-import { nextServer } from './api';
 import { Note, User } from '@/types/note';
+import { nextServer } from './api';
 import { NoteResponse } from './clientApi';
 
 export const checkServerSession = async () => {

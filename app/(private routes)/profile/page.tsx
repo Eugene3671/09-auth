@@ -1,8 +1,8 @@
-import { getServerMe } from "@/lib/serverApi";
 import css from "./ProfilePage.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import { getServerMe } from "@/lib/api/serverApi";
 
 export const metadata: Metadata = {
   title: "Profile",

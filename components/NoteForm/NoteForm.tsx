@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { NewNote } from "@/types/note";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
-import { createNote } from "@/lib/clientApi";
+import { createNote } from "@/lib/api/clientApi";
 
 export default function NoteForm() {
   const router = useRouter();

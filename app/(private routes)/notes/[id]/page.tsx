@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { NoteDetailsClient } from "./NoteDetails.client";
 import { Metadata } from "next";
-import { fetchServerNoteById } from "@/lib/serverApi";
+import { fetchServerNoteById } from "@/lib/api/serverApi";
 
 type Props = {
   params: Promise<{ id: string }>;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import css from "./EditProfilePage.module.css";
-import { updateMe } from "@/lib/clientApi";
+import { updateMe } from "@/lib/api/clientApi";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/lib/store/authStore";
 import Image from "next/image";
